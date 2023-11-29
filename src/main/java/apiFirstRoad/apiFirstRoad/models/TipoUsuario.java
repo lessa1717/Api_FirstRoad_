@@ -1,39 +1,36 @@
-//package apiFirstRoad.apiFirstRoad.models;
-//
-//
-//import com.fasterxml.jackson.annotation.JsonIgnore;
-//import jakarta.persistence.*;
-//import lombok.Getter;
-//import lombok.Setter;
-//import org.springframework.security.core.GrantedAuthority;
-//import org.springframework.security.core.authority.SimpleGrantedAuthority;
-//import org.springframework.security.core.userdetails.UserDetails;
-//
-//import java.io.Serial;
-//import java.io.Serializable;
-//import java.util.Collection;
-//import java.util.List;
-//import java.util.UUID;
-//
-//@Getter
-//@Setter
-//@Entity
-//@Table(name = "tb_TiposUsuario")
-//public class TipoUsuario implements Serializable, UserDetails {
-//
-//    @Serial
-//    private static final long serialVersionUID = 1L;
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "Id_tipoUsuario", nullable = false)
-//    private UUID id_tipoUsuario;
-//
-//    @Column(name = "tituloTipoUsuario", nullable = false)
-//    private String tituloTipoUsuario;
-//
-//
-//
+package apiFirstRoad.apiFirstRoad.models;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "tb_TiposUsuario")
+public class TipoUsuario implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Id_tipoUsuario", nullable = false)
+    private UUID id_tipoUsuario;
+
+    @Column(name = "tituloTipoUsuario", nullable = false)
+    private String tituloTipoUsuario;
+
+
 //    @Override
 //    public Collection<? extends GrantedAuthority> getAuthorities() {
 //
@@ -87,4 +84,5 @@
 //    public boolean isEnabled() {
 //        return true;
 //    }
-//}
+
+}
