@@ -1,8 +1,17 @@
 package apiFirstRoad.apiFirstRoad.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 import java.sql.Time;
 
+@Getter
+@Setter
+@Entity
+@Table(name = "tb_trilha")
 public class Trilha {
     private UUID idTrilha;
     private String tituloTrilha;

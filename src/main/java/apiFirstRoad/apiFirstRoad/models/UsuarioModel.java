@@ -23,7 +23,10 @@ public class UsuarioModel implements Serializable {
 
     private String nome;
 
+
     private String senha;
+
+    private String email;
 
     private String endereco;
 
