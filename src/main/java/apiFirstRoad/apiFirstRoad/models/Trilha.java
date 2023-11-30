@@ -1,6 +1,9 @@
 package apiFirstRoad.apiFirstRoad.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +16,10 @@ import java.sql.Time;
 @Entity
 @Table(name = "tb_trilha")
 public class Trilha {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO) // ou outra estratégia de geração de valor
     private UUID idTrilha;
+
     private String tituloTrilha;
     private String descricaoTrilha;
     private Time tempoTrilha;
@@ -22,6 +28,7 @@ public class Trilha {
     private UUID idUo;
     private UUID idConteudo;
 
+    // Getters e Setters
 
     public UUID getIdTrilha() {
         return idTrilha;

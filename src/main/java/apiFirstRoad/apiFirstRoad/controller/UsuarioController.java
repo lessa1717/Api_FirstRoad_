@@ -2,6 +2,7 @@ package apiFirstRoad.apiFirstRoad.controller;
 
 
 import apiFirstRoad.apiFirstRoad.dto.UsuarioDto;
+import apiFirstRoad.apiFirstRoad.models.Usuario;
 import apiFirstRoad.apiFirstRoad.models.UsuarioModel;
 import apiFirstRoad.apiFirstRoad.repositories.UsuarioRepository;
 import jakarta.validation.Valid;
@@ -23,13 +24,13 @@ public class UsuarioController {
     UsuarioRepository usuarioRepository;
 
     @GetMapping
-    public ResponseEntity<List<UsuarioModel>> listarUsuarios(){
+    public ResponseEntity<List<Usuario>> listarUsuarios(){
         return ResponseEntity.status(HttpStatus.OK).body(usuarioRepository.findAll());
     }
 
     @GetMapping("/{idUsuario}")
     public ResponseEntity<Object> buscarUsuarioId(@PathVariable(value = "idUsuario")UUID id){
-        Optional<UsuarioModel> usuarioBuscado = usuarioRepository.findById(id);
+        Optional<Usuario> usuarioBuscado = usuarioRepository.findById(id);
 
         if (usuarioBuscado.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario não encontrado");
@@ -46,7 +47,7 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email já cadastrado no sistema");
         }
 
-        UsuarioModel usuarioModel = new UsuarioModel();
+        Usuario usuarioModel = new Usuario();
         BeanUtils.copyProperties(usuarioDto, usuarioModel);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepository.save(usuarioModel));

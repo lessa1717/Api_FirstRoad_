@@ -1,15 +1,23 @@
 package apiFirstRoad.apiFirstRoad.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.UUID;
 import java.sql.Time;
 
+@Entity
 public class Conteudo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idConteudo;
+
     private String tituloConteudo;
     private String descricaoConteudo;
     private String link;
     private Time tempoConteudo;
-
 
     public UUID getIdConteudo() {
         return idConteudo;
