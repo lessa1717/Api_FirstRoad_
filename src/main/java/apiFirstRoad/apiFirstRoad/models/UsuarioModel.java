@@ -13,7 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_Usuarios")
+@Table(name = "tb_usuarios")
 public class UsuarioModel implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class UsuarioModel implements Serializable {
 //    private UUID id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id_usuario", nullable = false)
+    @Column(name = "Id", nullable = false)
     private Long id;
     private String nomeUsuario;
     private String senha;

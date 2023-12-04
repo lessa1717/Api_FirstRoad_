@@ -28,7 +28,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioRepository.findAll());
     }
 
-    @GetMapping("/{idUsuario}")
+    @GetMapping("/{id}")
     public ResponseEntity<Object> buscarUsuarioId(@PathVariable(value = "idUsuario")UUID id){
         Optional<Usuario> usuarioBuscado = usuarioRepository.findById(id);
 

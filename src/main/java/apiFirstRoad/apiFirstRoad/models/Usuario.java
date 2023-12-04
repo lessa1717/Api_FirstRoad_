@@ -2,14 +2,15 @@ package apiFirstRoad.apiFirstRoad.models;
 
 import jakarta.persistence.*;
 import java.util.UUID;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_Usuarios")
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID id_Usuario;
 
     @Column(name = "nomeUsuario")
     private String nomeUsuario;
@@ -24,7 +25,7 @@ public class Usuario {
     private int nif;
 
     @Column(name = "dataNascimento")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @ManyToOne
     @JoinColumn(name = "Id_tipoUsuario")
@@ -38,14 +39,14 @@ public class Usuario {
     @JoinColumn(name = "Id_cargo")
     private Cargo cargo;
 
-    // Getters e Setters
+    // Getters and Setters
 
-    public UUID getId() {
-        return id;
+    public UUID getId_Usuario() {
+        return id_Usuario;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setIdUsuario(UUID idUsuario) {
+        this.id_Usuario = idUsuario;
     }
 
     public String getNomeUsuario() {
@@ -80,11 +81,11 @@ public class Usuario {
         this.nif = nif;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
