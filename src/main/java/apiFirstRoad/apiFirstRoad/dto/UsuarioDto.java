@@ -7,17 +7,22 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.web.multipart.MultipartFile;
 
 public record UsuarioDto(
-        @NotBlank String nome,
+        String Id_usuario,
+        @NotBlank String nomeUsuario,
 
         @NotBlank @Email(message = "O email deve estar no formato válido") String email,
 
         @NotBlank String senha,
 
-        String endereco,
+        String nif,
 
-        String cep,
+        String dataNascimento,
 
-        TipoUsuario tipo_usuario,
+        String Id_tipoUsuario,
+
+        String Id_unidade,
+
+        String Id_cargo,
 
         MultipartFile imagem
 ) {

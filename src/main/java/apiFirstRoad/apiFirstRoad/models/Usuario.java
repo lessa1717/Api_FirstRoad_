@@ -10,6 +10,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Id_usuario")
     private UUID id_Usuario;
 
     @Column(name = "nomeUsuario")

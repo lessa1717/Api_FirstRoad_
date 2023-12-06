@@ -2,9 +2,10 @@ package apiFirstRoad.apiFirstRoad.controller;
 
 
 import apiFirstRoad.apiFirstRoad.dto.UsuarioDto;
-import apiFirstRoad.apiFirstRoad.models.Usuario;
+
 import apiFirstRoad.apiFirstRoad.models.UsuarioModel;
 import apiFirstRoad.apiFirstRoad.repositories.UsuarioRepository;
+import jakarta.persistence.Entity;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/usuarios", produces = {"application/json"})
 public class UsuarioController {
 
@@ -24,13 +26,13 @@ public class UsuarioController {
     UsuarioRepository usuarioRepository;
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> listarUsuarios(){
+    public ResponseEntity<List<UsuarioModel>> listarUsuarios(){
         return ResponseEntity.status(HttpStatus.OK).body(usuarioRepository.findAll());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{Id_usuario}")
     public ResponseEntity<Object> buscarUsuarioId(@PathVariable(value = "idUsuario")UUID id){
-        Optional<Usuario> usuarioBuscado = usuarioRepository.findById(id);
+        Optional<UsuarioModel> usuarioBuscado = usuarioRepository.findById(id);
 
         if (usuarioBuscado.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario não encontrado");
@@ -47,10 +49,13 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email já cadastrado no sistema");
         }
 
-        Usuario usuarioModel = new Usuario();
+
+        UsuarioModel usuarioModel = new UsuarioModel();
         BeanUtils.copyProperties(usuarioDto, usuarioModel);
 
+
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepository.save(usuarioModel));
+
     }
 
 }

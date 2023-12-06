@@ -19,18 +19,20 @@ public class UsuarioModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
-    //    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "Id_usuario", nullable = false)
-//    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+   @Column(name = "Id_usuario", nullable = false)
+    private UUID id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
-    private Long id;
+    private Long Id_usuario;
     private String nomeUsuario;
     private String senha;
     private Date dataNascimento;
     private String email;
-    private String tipo_usuario;
+    private String Id_tipoUsuario;
+    private String Id_unidade;
+    private String Id_cargo;
     private String url_img;
 
 }
