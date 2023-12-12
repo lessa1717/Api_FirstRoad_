@@ -1,0 +1,1 @@
+SELECT *, BIN_TO_UUID(id)as id  FROM tb_unidades;

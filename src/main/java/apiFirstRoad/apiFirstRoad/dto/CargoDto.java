@@ -1,6 +1,8 @@
 package apiFirstRoad.apiFirstRoad.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record CargoDto(
-        String idCargo,
-        String nomeCargo
+        @NotBlank String nome_cargo,
+        String id
 ) {}

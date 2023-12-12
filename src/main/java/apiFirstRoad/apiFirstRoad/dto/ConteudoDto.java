@@ -1,10 +1,13 @@
 package apiFirstRoad.apiFirstRoad.dto;
 
-public record ConteudoDto(
-        String idConteudo,
-        String tituloConteudo,
-        String descricaoConteudo,
-        String link,
-        String tempoConteudo
-) {}
+import jakarta.validation.constraints.NotBlank;
 
+import java.sql.Time;
+import java.util.UUID;
+
+public record ConteudoDto(
+        @NotBlank String titulo_conteudo,
+        String descricao_conteudo,
+        String link,
+        Time tempo_conteudo
+) {}

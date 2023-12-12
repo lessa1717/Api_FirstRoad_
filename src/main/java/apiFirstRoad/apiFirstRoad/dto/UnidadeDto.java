@@ -1,8 +1,7 @@
 package apiFirstRoad.apiFirstRoad.dto;
 
 public record UnidadeDto(
-        String idUnidade,
-        String razaoSocial,
+        String razao_social,
         String cnpj,
         String logradouro,
         int numero,

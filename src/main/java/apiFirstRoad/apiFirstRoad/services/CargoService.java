@@ -26,5 +26,4 @@ public class CargoService {
         cargoRepository.save(cargo);
     }
 
-
 }

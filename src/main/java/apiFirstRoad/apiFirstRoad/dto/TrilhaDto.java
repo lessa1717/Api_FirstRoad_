@@ -1,11 +1,15 @@
 package apiFirstRoad.apiFirstRoad.dto;
+
+import java.sql.Time;
+import java.util.UUID;
+
 public record TrilhaDto(
-        String idTrilha,
-        String tituloTrilha,
-        String descricaoTrilha,
-        String tempoTrilha,
+        String id,
+        String titulo_trilha,
+        String descricao_trilha,
+        Time tempo_trilha,
         String situacao,
-        String idCargo,
-        String idUO,
-        String idConteudo
+        UUID id_cargo,
+        UUID id_uo,
+        UUID id_conteudo
 ) {}

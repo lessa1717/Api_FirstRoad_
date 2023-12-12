@@ -1,8 +1,9 @@
 package apiFirstRoad.apiFirstRoad.dto;
 
+import java.util.UUID;
+
 public record UnidadeOrganizacionalDto(
-        String idUO,
-        String nomeDepartamento,
-        String idUsuario,
-        String idUnidade
+        String nome_departamento,
+        UUID id_usuario,
+        UUID id_unidade
 ) {}
